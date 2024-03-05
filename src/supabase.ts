@@ -1,15 +1,15 @@
-import { createClient } from '@supabase/supabase-js'
-import { ref } from 'vue'
-import { type Database } from '@/supabase-types'
+// import { createClient } from '@supabase/supabase-js'
+// import { ref } from 'vue'
+// import { type Database } from '@/supabase-types'
 
-const supabaseUrl = import.meta.env.VITE_SUPABASE_URL
-const supabaseAnonKey = import.meta.env.VITE_SUPABASE_ANON_KEY
+// const supabaseUrl = import.meta.env.VITE_SUPABASE_URL
+// const supabaseAnonKey = import.meta.env.VITE_SUPABASE_ANON_KEY
 
-export const supabase = createClient<Database>(supabaseUrl, supabaseAnonKey )
-globalThis.supabase = supabase
+// export const supabase = createClient<Database>(supabaseUrl, supabaseAnonKey )
+// globalThis.supabase = supabase
 
-const { data } = await supabase.auth.getUser()
-export const user = ref(data.user)
-supabase.auth.onAuthStateChange( (evt,session)=>{
-    user.value = session?.user ?? null
-})
+// const { data } = await supabase.auth.getUser()
+// export const user = ref(data.user)
+// supabase.auth.onAuthStateChange( (evt,session)=>{
+//     user.value = session?.user ?? null
+// })
