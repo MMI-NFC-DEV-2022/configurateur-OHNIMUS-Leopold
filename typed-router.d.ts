@@ -22,6 +22,7 @@ declare module 'vue-router/auto-routes' {
     '/AboutView': RouteRecordInfo<'/AboutView', '/AboutView', Record<never, never>, Record<never, never>>,
     '/basket/': RouteRecordInfo<'/basket/', '/basket', Record<never, never>, Record<never, never>>,
     '/basket/edit/[data]': RouteRecordInfo<'/basket/edit/[data]', '/basket/edit/:data', { data: ParamValue<true> }, { data: ParamValue<false> }>,
+    '/basket/editid/[id]': RouteRecordInfo<'/basket/editid/[id]', '/basket/editid/:id', { id: ParamValue<true> }, { id: ParamValue<false> }>,
     '/basket/exemple/[data]': RouteRecordInfo<'/basket/exemple/[data]', '/basket/exemple/:data', { data: ParamValue<true> }, { data: ParamValue<false> }>,
     '/basket/NewBasket': RouteRecordInfo<'/basket/NewBasket', '/basket/NewBasket', Record<never, never>, Record<never, never>>,
     '/IndexView': RouteRecordInfo<'/IndexView', '/IndexView', Record<never, never>, Record<never, never>>,
