@@ -16,22 +16,19 @@ const props = defineProps<{
 
 const chaussure = ref<Basket>(props.data ?? {});
 
-
-async function updateBasket() {
-  const { data, error } = await supabase
-    .from<Basket>("Basket")
-    .update(chaussure.value)
-    .eq("id", chaussure.value.id);
+async function createBasket() {
+  const { data, error } = await supabase.from<Basket>("Basket").insert(chaussure.value);
 
   if (error) {
-    console.error("Erreur lors de la mise à jour de la basket dans Supabase:", error.message);
+    console.error("Erreur lors de la création du basket dans Supabase:", error.message);
     return;
   }
 
-  console.log("Basket mis à jour avec succès");
+  console.log("Basket créé avec succès");
 
-  router.push("/basket");
+  router.push("/basket"); 
 }
+
 </script>
 
 <template>
@@ -52,7 +49,7 @@ async function updateBasket() {
 </div>
 
 
-<FormKit @submit="updateBasket" type="form" v-model="chaussure" >
+<FormKit @submit="createBasket" type="form" v-model="chaussure" >
     <FormKit name="semelle" label="semelle" value="#ffffff" type="radio" :options="colors"></FormKit>
     <FormKit name="empeigne" label="empeigne" value="#ffffff" type="radio" :options="colors"></FormKit>
     <FormKit name="pointe" label="pointe" value="#ffffff" type="radio" :options="colors">

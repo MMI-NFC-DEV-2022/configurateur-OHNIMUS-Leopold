@@ -10,6 +10,7 @@ import { RouterLink, RouterView } from 'vue-router'
         <RouterLink to="/AboutView">About</RouterLink>
         <RouterLink to="/IndexView">Index</RouterLink>
         <RouterLink to="/basket">BasketsBDD</RouterLink>
+        <RouterLink to="/basket/NewBasket">Nouvelle</RouterLink>
       </nav>
     </div>
   </header>
