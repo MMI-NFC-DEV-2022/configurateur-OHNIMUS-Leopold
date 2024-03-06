@@ -27,7 +27,7 @@ function getDataString(index: number): string {
     <h1 class="text-2xl">Liste des Baskets de la BDD</h1>
     <div class="flex flex-wrap gap-2">
       <div v-for="(exemple, index) in listeBaskets" :key="index" class="w-64">
-        <RouterLink :to="`/basket/exemple/${getDataString(index)}`">
+        <RouterLink :to="`/basket/edit/${getDataString(index)}`">
           <BasketProfil class="w-64" v-bind="exemple" />
         </RouterLink>
       </div>
