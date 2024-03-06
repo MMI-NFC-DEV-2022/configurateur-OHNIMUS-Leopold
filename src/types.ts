@@ -37,3 +37,19 @@ export const colors = {
     "#800000": "Marron",
     "#808000": "Olive",
 };
+
+
+export const materiaux = [
+    {
+      value: "https://www.tout-en-cuir.fr/wp-content/uploads/2015/04/leather-540142__180.jpg",
+      label: "Cuir",
+    },
+    {
+      value: "https://cdn2.tissus-price.com/96592-large_default/tissu-aspect-lin-paillete-or-grande-largeur.jpg",
+      label: "Tissu",
+    },
+    {
+      value: "https://www.leparisien.fr/resizer/Nn8w8ddKnePrrKOThDl5Uj6x0B4=/622x388/cloudfront-eu-central-1.images.arcpublishing.com/lpguideshopping/BVITJ2DXMJCPNCGQGO7P5LKNIM.jpg",
+      label: "Synthétique",
+    },
+];
