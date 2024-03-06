@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import {ref} from "vue"
-import { Basket, colors } from "@/types";
+import { Basket, colors, materiaux } from "@/types";
 
 import SvgProfil from '@/components/SvgProfil.vue';
 import SvgDessus from '@/components/SvgDessus.vue';
@@ -62,6 +62,24 @@ const chaussure = ref<Basket>(props.data ?? {});
     <FormKit name="languette" label="languette" value="#ffffff" type="radio" :options="colors"></FormKit>
     <FormKit name="lacet" label="lacet" value="#ffffff" type="radio" :options="colors"></FormKit>
     <FormKit name="trimestre" label="trimestre" value="#ffffff" type="radio" :options="colors"></FormKit>
+
+
+
+    <FormKit name="materiaux" label="materiaux" value="#ffffff" type="radio" :options="materiaux" :sections-schema="{
+        inner: { $el: null},
+        decorator: { $el: null },
+    }" 
+    input-class="peer sr-only"
+    options-class="flex gap-4"
+    >
+        <template #label="context">
+        <div class="h-6 w-6 rounded-full border-2 peer-checked:border-red-600" :style="{ backgroundImage: `url(${context.option.value})` }" />
+
+        <span class="sr-only">{{ context.option.label }}</span>
+
+        </template>
+    </FormKit>
+
 </FormKit>
 </div>
 </template>
