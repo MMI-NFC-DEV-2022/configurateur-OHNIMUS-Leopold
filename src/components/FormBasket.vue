@@ -34,7 +34,15 @@ const chaussure = ref<Basket>(props.data ?? {});
 <FormKit type="form" v-model="chaussure" >
     <FormKit name="semelle" label="semelle" value="#ffffff" type="radio" :options="colors"></FormKit>
     <FormKit name="empeigne" label="empeigne" value="#ffffff" type="radio" :options="colors"></FormKit>
-    <FormKit name="pointe" label="pointe" value="#ffffff" type="radio" :options="colors"></FormKit>
+    <FormKit name="pointe" label="pointe" value="#ffffff" type="radio" :options="colors">
+        <template #label="context">
+            <div 
+                class="h-6 w-6 rounded-full"
+                :style="{backgroundColor: context.option.value}"
+            />
+            <span>{{context.option.label}}</span>
+        </template>
+    </FormKit>
     <FormKit name="oeillet" label="oeillet" value="#ffffff" type="radio" :options="colors"></FormKit>
     <FormKit name="bande" label="bande" value="#ffffff" type="radio" :options="colors"></FormKit>
     <FormKit name="languette" label="languette" value="#ffffff" type="radio" :options="colors"></FormKit>
